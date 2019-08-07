@@ -8,11 +8,13 @@ function Menu (props){
     renderMenuItem=({item, index})=>{
         return(
             <ListItem
+            key={index}
             title={item.name}
             subtitle={item.description}
-            leftAvatar={{source : require('./images/uthappizza.png')}}
-            key={index}
-            />
+            hideChevron={true}
+            onPress={() => props.onPress(item.id)}
+            leftAvatar={{ source: require('./images/uthappizza.png')}}
+          />
         )
     }
 
